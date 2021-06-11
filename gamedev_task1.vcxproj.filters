@@ -24,12 +24,24 @@
     <ClCompile Include="Continent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="River.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sea.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Country.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Continent.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="River.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sea.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

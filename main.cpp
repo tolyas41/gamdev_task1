@@ -2,81 +2,10 @@
 #include <string>
 #include <vector>
 #include "Country.h"
+#include "Continent.h"
+#include "River.h"
+#include "Sea.h"
 
-using namespace std;
-                                          //-------Continent class
-
-//class Continent {
-//    string name;
-//    float area;
-//    const string hemi;
-//    vector <Country> countrs;
-//    static int count;                    //static counter
-//public:
-//constructors and destructor
-//Continent (string n, float a, string h) : name{n}, area{a}, hemi{h} {count++;} 
-//Continent () : Continent {"none", 0, "unknown"} {}
-//~Continent () { //    cout << "destruction! .. of " << name << endl; 
-//    count--;}                
-//methods
-//void add_countrs (const Country &c) {
-//    countrs.push_back(c);
-//}
-//void get_all () {
-//    cout << "\n\n           --" << name <<"--\nArea (mill of kms) : " << area << "\nHemosphere : " << hemi <<  endl;
-//    cout << "Countries of " << name << " : ";
-//    for (auto &cn : countrs)
-//        cn.get_name();
-//}
-//static int get_count () {return count;}
-//
-//};
-//int Continent::count = 0;                     
-                                         //-------River class
-class River {
-    string name;
-    float len;
-    static int count;
-public:
-//constructors and destructor
-River (string n, float le) : name{n}, len{le} {count++;} 
-River () : River {"none", 0} {}
-~River () { //    cout << "destruction! .. of " << name << endl; 
-    count--;}
-//methods
-void get_name () {cout << name << ", ";}
-void get_all () {
-    cout << "\n           --" << name <<"--\nLength : " << len <<  endl;
-}
-static int get_count () {return count;}
-};
-int River::count = 0;
-                                       //---------Sea class
-class Sea {
-    string name;
-    float area;
-    const string cont;
-    vector <River> flowrivers;
-    static int count;
-public:
-//constructors and destructor
-Sea (string n, float a, string c) : name{n}, area{a}, cont{c} {count++;} 
-Sea () : Sea {"none", 0, "unknown"} {}
-~Sea () { //    cout << "destruction! .. of " << name << endl; 
-    count--;}    
-//methods
-void add_flowrivers (const River &r) {
-    flowrivers.push_back(r);
-}
-void get_all () {
-    cout << "\n\n           --" << name <<"--\nArea (mill of kms) : " << area << "\nContinent : " << cont <<  endl;
-    cout << "Flowing rivers to " << name << " : ";
-    for (auto &fr : flowrivers)
-        fr.get_name();
-}
-static int get_count () {return count;}
-};
-int Sea::count = 0;
                                       //---------Star class
 class Star {
     string name;
@@ -129,7 +58,7 @@ int Galaxy::count = 0;
 int main() {
     
 //1. Country and Continent classes
-{   cout << "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Countries and Continents\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  \n";
+{   std::cout << "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\Countries and Continents\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  \n";
 Country rus;
 rus.set_name("Russia");
 rus.set_area(17.1);                                       
@@ -143,14 +72,15 @@ chi.get_all_country();
 Country jap ("Japan", 0.38 , "Japanese" , 126);
 jap.get_all_country();
 cout << "\n>Number of countries : " << Country::get_count() << endl;
+
 Continent eu("Europe", 10.2 , "north");
 eu.add_countrs(rus);
 eu.add_countrs(ger);
-eu.get_all();
+eu.get_all_continent();
 Continent as ("Asia", 44.5, "north");
 as.add_countrs(chi);
 as.add_countrs(jap); 
-as.get_all();
+as.get_all_continent();
 cout << "\n\n>Number of continents : " << Continent::get_count() << endl;
 }
 //2. River and Sea classes

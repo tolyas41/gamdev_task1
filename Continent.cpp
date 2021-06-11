@@ -1,20 +1,31 @@
 #include "Continent.h"
+#include "Country.h"
+#include <string>
+#include <iostream>
 int Continent::count = 0;
 //constructors and destructor
-Continent::Continent(string n, float a, string h) : name{ n }, area{ a }, hemi{ h } {count++; }
-Continent::Continent() : Continent{ "none", 0, "unknown" } {}
+Continent::Continent (std::string n, float a, std::string h) : name{ n }, area{ a }, hemi{ h } {count++; }
+Continent::Continent() : Continent{"none", 0, "unknown" } {}
 Continent::~Continent() {count--;}
 //methods
-void Continent::add_countrs(const Country& c) {
+void Continent::add_countrs (const Country& c) {
     countrs.push_back(c);
 }
 
 void Continent::get_all_continent() {
-    cout << "\n\n           --" << name << "--\nArea (mill of kms) : " << area << "\nHemosphere : " << hemi << endl;
-    cout << "Countries of " << name << " : ";
+    std::cout << "\n\n           --" << get_name() << "--\nArea (mill of kms) : " << get_area() << "\nHemosphere : " << get_hemi() << std::endl;
+    std::cout << "Countries of " << get_name() << " : ";
     for (auto& cn : countrs)
-        cn.get_name();
+        std::cout << cn.get_name() << " ,";
 }
-static int get_count() { return count; }
+int Continent::get_count() { return count; }
 
-};
+std::string Continent::get_name() {
+    return name;
+}
+float Continent::get_area() {
+    return area;
+}
+std::string Continent::get_hemi() {
+    return hemi;
+}

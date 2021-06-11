@@ -1,33 +1,27 @@
 #pragma once
 #include <string>
-#include <iostream>
 #include <vector>
+#include "Country.h"
 
 class Continent {
     std::string name;
     float area;
-    const string hemi;
+    const std::string hemi;
     std::vector <Country> countrs;
-    static int count;                    //static counter
+    static int count;                    
 public:
-    //constructors and destructor
-    Continent(string, float a, string h) : name{ n }, area{ a }, hemi{ h } {count++; }
-    Continent() : Continent{ "none", 0, "unknown" } {}
-    ~Continent() { //    cout << "destruction! .. of " << name << endl; 
-        count--;
-    }
-    //methods
-    void add_countrs(const Country& c) {
-        countrs.push_back(c);
-    }
-    void get_all() {
-        cout << "\n\n           --" << name << "--\nArea (mill of kms) : " << area << "\nHemosphere : " << hemi << endl;
-        cout << "Countries of " << name << " : ";
-        for (auto& cn : countrs)
-            cn.get_name();
-    }
-    static int get_count() { return count; }
+
+    Continent(std::string, float, std::string);
+    Continent();
+    ~Continent();
+   
+    std::string get_name();
+    float get_area();
+    std::string get_hemi();
+    //std::vector get_countrs();
+    void add_countrs(const Country&);
+    void get_all_continent();
+    static int get_count();
 
 };
-int Continent::count = 0;
 

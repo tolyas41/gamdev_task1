@@ -22,10 +22,14 @@
     <ClCompile Include="Continent.cpp" />
     <ClCompile Include="Country.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="River.cpp" />
+    <ClCompile Include="Sea.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Continent.h" />
     <ClInclude Include="Country.h" />
+    <ClInclude Include="River.h" />
+    <ClInclude Include="Sea.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
