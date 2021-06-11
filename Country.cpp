@@ -16,8 +16,8 @@ float Country::get_area() {return area;}
 std::string Country::get_state_lang () {return state_lang;}
 float Country::get_popul () {return popul;}
 void Country::get_all_country() {
-    std::cout << "\n\n           --" << get_name() << "--\nArea : " << get_area() << "\nState language : " <<
-        get_state_lang() << "\nPopulation : " << get_popul() << std::endl;
+std::cout << "\n\n           --" << get_name() << "--\nArea : " << get_area() << "\nState language : " <<
+get_state_lang() << "\nPopulation : " << get_popul() << std::endl;
 }
 int Country::get_count () {return count;}
 
