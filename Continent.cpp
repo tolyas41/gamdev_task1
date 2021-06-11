@@ -3,9 +3,7 @@ int Continent::count = 0;
 //constructors and destructor
 Continent::Continent(string n, float a, string h) : name{ n }, area{ a }, hemi{ h } {count++; }
 Continent::Continent() : Continent{ "none", 0, "unknown" } {}
-Continent::~Continent() { //    cout << "destruction! .. of " << name << endl; 
-    count--;
-}
+Continent::~Continent() {count--;}
 //methods
 void Continent::add_countrs(const Country& c) {
     countrs.push_back(c);

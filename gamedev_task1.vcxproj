@@ -19,10 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Continent.cpp" />
     <ClCompile Include="Country.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Continent.h" />
     <ClInclude Include="Country.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
