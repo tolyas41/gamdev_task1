@@ -7,15 +7,15 @@
     River::River() : River{ "none", 0 } {}
     River::~River() {count--;}
     //methods
-    std::string River::get_name() { 
+    std::string River::get_name() const {
         return name; 
     }
-    float River::get_length() {
+    float River::get_length() const {
         return length;
     }
-    void River::get_all() {
+    void River::print_all() const {
         std::cout << "\n           --" << get_name() << "--\nLength : " << get_length() << std::endl;
     }
-    int River::get_count() { return count; }
+    int River::get_count()  { return count; }
 
 

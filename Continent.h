@@ -15,12 +15,11 @@ public:
     Continent();
     ~Continent();
    
-    std::string get_name();
-    float get_area();
-    std::string get_hemi();
-    //std::vector get_countrs();
+    std::string get_name() const;
+    float get_area() const;
+    std::string get_hemi() const;
     void add_countrs(const Country&);
-    void get_all_continent();
+    void print_all() ;
     static int get_count();
 
 };

@@ -10,9 +10,9 @@ public:
     River();
     ~River();
 
-    std::string get_name();
-    float get_length();
-    void get_all();
+    std::string get_name() const;
+    float get_length() const;
+    void print_all() const;
     static int get_count();
 };
 

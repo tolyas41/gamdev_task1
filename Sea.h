@@ -13,6 +13,10 @@ public:
     Sea();
     ~Sea();
     void add_flowrivers(const River& r);
-    void get_all();
+    std::string get_name() const;
+    float get_area() const;
+    std::string get_continent() const;
+    void print_all();
     static int get_count();
 
+};

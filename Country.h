@@ -21,11 +21,11 @@ void set_area (float);
 void set_state_lang (std::string);
 void set_popul (float);
 //getters
-std::string get_name ();
-float get_area();
-std::string get_state_lang ();
-float get_popul ();
-void get_all_country();
+std::string get_name () const;
+float get_area() const;
+std::string get_state_lang () const;
+float get_popul () const;
+void print_all() const;
 static int get_count ();
 }; 
 
