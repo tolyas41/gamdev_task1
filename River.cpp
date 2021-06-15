@@ -3,19 +3,42 @@
 #include <iostream>
 
     int River::count = 0;
-    River::River(std::string n, float le) : name{ n }, length{ le } {count++; }
-    River::River() : River{ "none", 0 } {}
-    River::~River() {count--;}
-    //methods
+    
+//constructors and destructor
+    River::River(const std::string& init_name, float init_length) 
+        : name{ init_name }, length{ init_length } {
+        count++; 
+    }
+    River::River() 
+        : River{ "none", 0 } {}
+    River::~River() {
+        count--;
+    }
+    
+//setters
+    void River::set_name(const std::string& set_name) {
+        name = set_name;
+    }
+    void River::set_length(float set_length) {
+        length = set_length;
+    }
+
+//getters
     std::string River::get_name() const {
         return name; 
     }
     float River::get_length() const {
         return length;
     }
-    void River::print_all() const {
-        std::cout << "\n           --" << get_name() << "--\nLength : " << get_length() << std::endl;
+    int River::get_count() {
+        return count; 
     }
-    int River::get_count()  { return count; }
+
+//print with getters
+    void River::print_all() const {
+        std::cout << "\n           --" << get_name() << 
+        "--\nLength : " << get_length() << std::endl;
+    }
+    
 
 

@@ -6,22 +6,29 @@
 
 class Galaxy {
     std::string name;
-    float stars_number;
+    float number_of_stars;
     const std::string type;
     std::vector <Star> stars;
     static int count;
 public:
-    Galaxy(std::string, float, std::string);
+//constructors and destructor
+    Galaxy(const std::string& init_name, float init_numb_of_stars, const std::string& init_type);
+    Galaxy(const std::string& init_type);
     Galaxy();
     ~Galaxy();
 
-    std::string get_name () const;
-    float get_stars_number () const;
-    std::string get_type () const;
+//setters
+    void set_name(const std::string& set_name);
+    void set_number_of_stars(float set_number_of_stars);
+    void add_stars(const Star& star);
 
-    void print_all ();
+//getters
+    std::string get_name () const;
+    float get_number_of_stars () const;
+    std::string get_type () const;
     static int get_count();
 
-    void add_stars(const Star&);
+//print
+    void print_all ();
 };
 

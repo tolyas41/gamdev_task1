@@ -21,15 +21,19 @@
   <ItemGroup>
     <ClCompile Include="Continent.cpp" />
     <ClCompile Include="Country.cpp" />
+    <ClCompile Include="Galaxy.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="River.cpp" />
     <ClCompile Include="Sea.cpp" />
+    <ClCompile Include="Star.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Continent.h" />
     <ClInclude Include="Country.h" />
+    <ClInclude Include="Galaxy.h" />
     <ClInclude Include="River.h" />
     <ClInclude Include="Sea.h" />
+    <ClInclude Include="Star.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

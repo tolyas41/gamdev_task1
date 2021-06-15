@@ -6,21 +6,30 @@
 class Continent {
     std::string name;
     float area;
-    const std::string hemi;
-    std::vector <Country> countrs;
-    static int count;                    
+    const std::string hemisphere;
+    std::vector <Country> countries;
+    static int count;      
 public:
-
-    Continent(std::string, float, std::string);
+//constructors and destructor
+    Continent(const std::string& init_name, float init_area, const std::string& init_hemisphere);
+    Continent(const std::string& init_hemisphere);
     Continent();
     ~Continent();
    
+//getters
     std::string get_name() const;
     float get_area() const;
-    std::string get_hemi() const;
-    void add_countrs(const Country&);
-    void print_all() ;
+    std::string get_hemisphere() const;
     static int get_count();
+    
+//setters
+    void set_name(const std::string& set_name);
+    void set_area(float set_area);
+    void add_countries(const Country& country);
+
+//print
+    void print_all() ;
+
 
 };
 

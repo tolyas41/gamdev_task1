@@ -9,14 +9,23 @@ class Sea {
     std::vector <River> flowrivers;
     static int count;
 public:
-    Sea(std::string, float, std::string);
+//contructors and destructor
+    Sea(const std::string& init_name, float init_area, const std::string& init_continent);
+    Sea(const std::string& init_continent);
     Sea();
     ~Sea();
-    void add_flowrivers(const River& r);
+
+//setters
+    void set_name(const std::string& set_name);
+    void set_area(float set_area);
+    void add_flowrivers(const River& river);
+
+//getters
     std::string get_name() const;
     float get_area() const;
     std::string get_continent() const;
-    void print_all();
     static int get_count();
 
+//print
+    void print_all();
 };

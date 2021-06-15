@@ -4,31 +4,53 @@
 #include <iostream>
 
     int Galaxy::count = 0;
-
-    Galaxy::Galaxy(std::string n, float sn, std::string t) : name{ n }, stars_number{ sn }, type{ t } {count++; }
-    Galaxy::Galaxy() : Galaxy{ "none", 0, "unknown" } {}
-    Galaxy::~Galaxy() {count--;}
-
-    void Galaxy::add_stars(const Star& r)
-    {
-        stars.push_back(r);
+//constructors and destructor
+    Galaxy::Galaxy(const std::string& init_name, float init_numb_of_stars, const std::string& init_type) 
+        : name{ init_name }, number_of_stars{ init_numb_of_stars }, type{ init_type } {
+        count++; 
     }
-    void Galaxy::print_all ()
-    {
-        std::cout << "\n\n           --" << get_name() << "--\n~Number of stars : " << get_stars_number() 
-        << "\nGalaxy type : " << get_type() << std::endl;
-        std::cout << "Stars " << " : ";
-        for (auto& st : stars)
-            std::cout << st.get_name() << ", ";
+    Galaxy::Galaxy(const std::string& init_type)
+        : name{ "none" }, number_of_stars{ 0 }, type{ init_type } {
+        count++;
     }
-    int Galaxy::get_count() { return count; }
+    Galaxy::Galaxy() 
+        : Galaxy{ "none", 0, "unknown" } {}
+    Galaxy::~Galaxy() {
+        count--;
+    }
 
-    std::string Galaxy::get_name() const { return name; }
-    float Galaxy::get_stars_number() const {
-        return stars_number;
+//setters
+    void Galaxy::set_name(const std::string& set_name) {
+        name = set_name;
+    }
+    void Galaxy::set_number_of_stars(float set_number_of_stars) {
+        number_of_stars = set_number_of_stars;
+    }
+    void Galaxy::add_stars(const Star& star) {
+        stars.push_back(star);
+    }
+
+//getters
+    int Galaxy::get_count() { 
+        return count; 
+    }
+    std::string Galaxy::get_name() const { 
+        return name; 
+    }
+    float Galaxy::get_number_of_stars() const {
+        return number_of_stars;
     }
     std::string Galaxy::get_type() const {
         return type;
+    }
+
+//print all with getters
+    void Galaxy::print_all() {
+        std::cout << "\n\n           --" << get_name() << "--\n~Number of stars : " << get_number_of_stars() 
+        << "\nGalaxy type : " << get_type() << std::endl;
+        std::cout << "Stars " << " : ";
+        for (auto& star : stars)
+            std::cout << star.get_name() << ", ";
     }
 
 
