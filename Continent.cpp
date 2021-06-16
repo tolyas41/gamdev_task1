@@ -48,7 +48,7 @@
 //print all variables with getters
     void Continent::print_all() {
         std::cout << "\n\n           --" << get_name() << "--\nArea (mill of kms) : " << 
-        get_area() << "\nHemosphere : " << get_hemisphere() << std::endl;
+        get_area() << "\nHemisphere : " << get_hemisphere() << std::endl;
         std::cout << "Countries of " << get_name() << " : ";
         for (auto& country : countries)
             std::cout << country.get_name() << ", ";

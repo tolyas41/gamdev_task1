@@ -2,17 +2,18 @@
 #include <string>
 #include <vector>
 #include "River.h"
+#include "Continent.h"
+
 class Sea {
     std::string name;
     float area;
-    const std::string continent;
+    const Continent& continent;
     std::vector <River> flowrivers;
     static int count;
 public:
 //contructors and destructor
-    Sea(const std::string& init_name, float init_area, const std::string& init_continent);
-    Sea(const std::string& init_continent);
-    Sea();
+    Sea(const std::string& init_name, float init_area, const Continent& init_continent);
+    Sea(const Continent& init_continent);
     ~Sea();
 
 //setters
